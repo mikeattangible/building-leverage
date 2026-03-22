@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leverage Builders - Build Leverage. Not More Work.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#B0B44A',
+                        'gold-dark': '#8A8D3A',
+                        charcoal: '#1F1F1F',
+                        'warm-white': '#FAF9F7',
+                        'muted-grey': '#6B666B',
+                        'light-stone': '#E8E5DF',
+                    },
+                    fontFamily: {
+                        display: ['"Playfair Display"', 'serif'],
+                        body: ['"Inter"', 'sans-serif'],
+                        editorial: ['"Crimson Text"', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: #FAF9F7; color: #000000; }
+
+        /* Gold highlight effect inspired by brand guidelines */
+        .gold-highlight {
+            background: linear-gradient(180deg, transparent 60%, rgba(176, 180, 74, 0.25) 60%);
+            display: inline;
+        }
+
+        /* Subtle grain texture for depth */
+        .grain::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        /* Spring-style easing for interactions */
+        .btn-primary {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease;
+        }
+        .btn-primary:hover { transform: scale(1.03); }
+        .btn-primary:active { transform: scale(0.98); }
+
+        /* Layered shadow system */
+        .shadow-elevated {
+            box-shadow: 0 1px 2px rgba(31, 31, 31, 0.04), 0 4px 12px rgba(31, 31, 31, 0.06);
+        }
+        .shadow-floating {
+            box-shadow: 0 2px 4px rgba(31, 31, 31, 0.04), 0 8px 24px rgba(31, 31, 31, 0.08), 0 24px 48px rgba(31, 31, 31, 0.04);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-warm-white border-b border-light-stone/60 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <img src="Brand%20Logo.png" alt="Leverage Builders" class="h-10 w-auto">
+                <span class="md:hidden font-display text-lg font-medium text-charcoal">Leverage Builders</span>
+            </a>
+            <!-- Desktop nav -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#values" class="font-body text-sm text-muted-grey hover:text-charcoal transition-colors duration-200 tracking-wide uppercase">Our Values</a>
+                <a href="#about" class="font-body text-sm text-muted-grey hover:text-charcoal transition-colors duration-200 tracking-wide uppercase">About</a>
+                <a href="#community" class="font-body text-sm text-muted-grey hover:text-charcoal transition-colors duration-200 tracking-wide uppercase">Community</a>
+                <a href="#hero" class="btn-primary inline-block bg-charcoal text-warm-white px-5 py-2.5 text-sm font-medium tracking-wide rounded-sm hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold">Join the Community</a>
+            </nav>
+            <!-- Mobile hamburger -->
+            <button onclick="document.getElementById('mobile-nav').classList.toggle('hidden')" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu">
+                <span class="w-5 h-0.5 bg-charcoal"></span>
+                <span class="w-5 h-0.5 bg-charcoal"></span>
+                <span class="w-5 h-0.5 bg-charcoal"></span>
+            </button>
+        </div>
+        <!-- Mobile nav dropdown -->
+        <div id="mobile-nav" class="hidden md:hidden border-t border-light-stone/60 bg-warm-white px-6 py-4 space-y-4">
+            <a href="#values" onclick="document.getElementById('mobile-nav').classList.add('hidden')" class="block font-body text-sm text-muted-grey hover:text-charcoal transition-colors duration-200 tracking-wide uppercase">Our Values</a>
+            <a href="#about" onclick="document.getElementById('mobile-nav').classList.add('hidden')" class="block font-body text-sm text-muted-grey hover:text-charcoal transition-colors duration-200 tracking-wide uppercase">About</a>
+            <a href="#community" onclick="document.getElementById('mobile-nav').classList.add('hidden')" class="block font-body text-sm text-muted-grey hover:text-charcoal transition-colors duration-200 tracking-wide uppercase">Community</a>
+            <a href="#hero" onclick="document.getElementById('mobile-nav').classList.add('hidden')" class="block btn-primary bg-charcoal text-warm-white px-5 py-2.5 text-sm font-medium tracking-wide rounded-sm text-center hover:opacity-90">Join the Community</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="hero" class="relative grain overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 pt-16 pb-20 md:pt-24 md:pb-32">
+            <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.1] tracking-[-0.03em] text-charcoal mb-4 max-w-5xl">
+                Do <span class="gold-highlight">Better Work</span> in Search with AI
+            </h1>
+            <p class="font-display text-xl md:text-2xl text-muted-grey font-medium leading-snug mb-6 max-w-3xl">The community for search marketers using AI to improve their work and become better operators.</p>
+            <div class="grid md:grid-cols-5 gap-12 md:gap-16 items-start">
+                <!-- Left: content -->
+                <div class="md:col-span-3">
+                    <p class="font-editorial text-lg md:text-xl text-black leading-relaxed mb-10" style="line-height: 1.7;">
+                        Join a community of SEO professionals who care about the craft, designing <span class="gold-highlight">AI-assisted workflows</span> to <span class="gold-highlight">do better work</span>, think more strategically, and create more <span class="gold-highlight">space for what matters</span>, strategy, relationships, and creativity.
+                    </p>
+
+                    <ul class="space-y-3 mb-10">
+                        <li class="flex items-start gap-3">
+                            <span class="text-gold mt-1.5 text-xs">&#9679;</span>
+                            <span class="font-editorial text-lg text-black" style="line-height: 1.6;">Build AI-assisted SEO workflows</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-gold mt-1.5 text-xs">&#9679;</span>
+                            <span class="font-editorial text-lg text-black" style="line-height: 1.6;">Learn how others are using AI inside real client work</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-gold mt-1.5 text-xs">&#9679;</span>
+                            <span class="font-editorial text-lg text-black" style="line-height: 1.6;">Navigate the changes in search together, not in isolation</span>
+                        </li>
+                    </ul>
+
+                    <!-- Signup form: shows here on mobile, hidden on desktop -->
+                    <div class="md:hidden bg-charcoal rounded-sm p-8 mb-8">
+                        <p class="font-display text-2xl font-medium text-warm-white mb-5">Join Leverage Builders</p>
+                        <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-3">
+                            <input type="text" name="name" placeholder="Your name" required
+                                class="w-full px-4 py-3 bg-white/10 border border-white/15 text-warm-white placeholder-warm-white/40 font-body text-sm rounded-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors duration-200">
+                            <input type="email" name="email" placeholder="Your email" required
+                                class="w-full px-4 py-3 bg-white/10 border border-white/15 text-warm-white placeholder-warm-white/40 font-body text-sm rounded-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors duration-200">
+                            <button type="submit"
+                                class="btn-primary w-full bg-gold text-charcoal px-6 py-3.5 text-sm font-semibold tracking-wide rounded-sm hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-warm-white">
+                                Join the Mailing List
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="#" class="btn-primary inline-flex items-center gap-2 bg-charcoal text-warm-white px-6 py-3 text-sm font-medium tracking-wide rounded-sm text-center hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold">
+                            Join the Discussion <span class="text-lg leading-none">&rarr;</span>
+                        </a>
+                        <a href="#" class="btn-primary inline-flex items-center gap-2 border border-charcoal text-charcoal px-6 py-3 text-sm font-medium tracking-wide rounded-sm text-center hover:bg-charcoal hover:text-warm-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold">
+                            Free Resources <span class="text-lg leading-none">&rarr;</span>
+                        </a>
+                        <a href="#" class="btn-primary inline-flex items-center gap-2 border border-charcoal text-charcoal px-6 py-3 text-sm font-medium tracking-wide rounded-sm text-center hover:bg-charcoal hover:text-warm-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold">
+                            Read the Substack <span class="text-lg leading-none">&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: signup form (desktop only) -->
+                <div class="hidden md:block md:col-span-2">
+                    <div class="bg-charcoal rounded-sm p-8 md:sticky md:top-24">
+                        <p class="font-display text-2xl font-medium text-warm-white mb-5">Join Leverage Builders</p>
+                        <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-3">
+                            <input type="text" name="name" placeholder="Your name" required
+                                class="w-full px-4 py-3 bg-white/10 border border-white/15 text-warm-white placeholder-warm-white/40 font-body text-sm rounded-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors duration-200">
+                            <input type="email" name="email" placeholder="Your email" required
+                                class="w-full px-4 py-3 bg-white/10 border border-white/15 text-warm-white placeholder-warm-white/40 font-body text-sm rounded-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors duration-200">
+                            <button type="submit"
+                                class="btn-primary w-full bg-gold text-charcoal px-6 py-3.5 text-sm font-semibold tracking-wide rounded-sm hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-warm-white">
+                                Join the Mailing List
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values - Swiping Carousel -->
+    <section id="values" class="bg-white py-20 md:py-28 overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <p class="font-body text-sm tracking-widest uppercase text-gold-dark mb-4">Our Values</p>
+                <h2 class="font-display text-3xl md:text-4xl font-medium tracking-[-0.03em] text-charcoal">What we stand for.</h2>
+            </div>
+        </div>
+        <div class="relative">
+            <div id="values-track" class="flex gap-6 px-6 cursor-grab active:cursor-grabbing select-none" style="overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
+                <div style="min-width: 20px; flex-shrink: 0;"></div>
+                <div class="flex-shrink-0 w-[300px] md:w-[340px] bg-warm-white p-8 rounded-sm shadow-elevated scroll-snap-align-start" style="scroll-snap-align: start;">
+                    <div class="w-8 h-[2px] bg-gold mb-6"></div>
+                    <h3 class="font-display text-lg font-medium text-charcoal mb-3">Stay in control</h3>
+                    <p class="font-editorial text-base text-black" style="line-height: 1.7;">AI supports your thinking and delivery. It does not replace your role in it. The strategist stays at the centre.</p>
+                </div>
+                <div class="flex-shrink-0 w-[300px] md:w-[340px] bg-warm-white p-8 rounded-sm shadow-elevated" style="scroll-snap-align: start;">
+                    <div class="w-8 h-[2px] bg-gold mb-6"></div>
+                    <h3 class="font-display text-lg font-medium text-charcoal mb-3">Leverage, not shortcuts</h3>
+                    <p class="font-editorial text-base text-black" style="line-height: 1.7;">We build systems that improve the quality of work, not hacks that remove you from it. No slop. No cheap tricks.</p>
+                </div>
+                <div class="flex-shrink-0 w-[300px] md:w-[340px] bg-warm-white p-8 rounded-sm shadow-elevated" style="scroll-snap-align: start;">
+                    <div class="w-8 h-[2px] bg-gold mb-6"></div>
+                    <h3 class="font-display text-lg font-medium text-charcoal mb-3">Design how the work gets done</h3>
+                    <p class="font-editorial text-base text-black" style="line-height: 1.7;">Move from doing tasks to shaping processes that improve consistency, depth, and client outcomes.</p>
+                </div>
+                <div class="flex-shrink-0 w-[300px] md:w-[340px] bg-warm-white p-8 rounded-sm shadow-elevated" style="scroll-snap-align: start;">
+                    <div class="w-8 h-[2px] bg-gold mb-6"></div>
+                    <h3 class="font-display text-lg font-medium text-charcoal mb-3">Better work, not more work</h3>
+                    <p class="font-editorial text-base text-black" style="line-height: 1.7;">The goal is not more output. It is clearer thinking, stronger outcomes, and more time for what matters.</p>
+                </div>
+                <div class="flex-shrink-0 w-[300px] md:w-[340px] bg-warm-white p-8 rounded-sm shadow-elevated" style="scroll-snap-align: start;">
+                    <div class="w-8 h-[2px] bg-gold mb-6"></div>
+                    <h3 class="font-display text-lg font-medium text-charcoal mb-3">Use AI intentionally</h3>
+                    <p class="font-editorial text-base text-black" style="line-height: 1.7;">Every tool and workflow should serve a purpose. No noise, no complexity for its own sake, no chasing every new thing.</p>
+                </div>
+                <div class="flex-shrink-0 w-[300px] md:w-[340px] bg-warm-white p-8 rounded-sm shadow-elevated" style="scroll-snap-align: start;">
+                    <div class="w-8 h-[2px] bg-gold mb-6"></div>
+                    <h3 class="font-display text-lg font-medium text-charcoal mb-3">Stay close to the craft</h3>
+                    <p class="font-editorial text-base text-black" style="line-height: 1.7;">The best consultants refine their thinking. They do not outsource it. Strategy, creativity, and relationships remain the highest-leverage activities.</p>
+                </div>
+                <div style="min-width: 20px; flex-shrink: 0;"></div>
+            </div>
+            <!-- Scroll indicators -->
+            <div class="flex justify-center gap-2 mt-8" id="values-dots"></div>
+        </div>
+    </section>
+    <style>
+        #values-track::-webkit-scrollbar { display: none; }
+    </style>
+    <script>
+        (function() {
+            const track = document.getElementById('values-track');
+            const dotsContainer = document.getElementById('values-dots');
+            const cards = track.querySelectorAll('.flex-shrink-0.w-\\[300px\\]');
+
+            // Create dots
+            cards.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.className = 'w-2 h-2 rounded-full transition-colors duration-200 ' + (i === 0 ? 'bg-charcoal' : 'bg-light-stone');
+                dot.setAttribute('aria-label', 'Go to card ' + (i + 1));
+                dot.addEventListener('click', () => {
+                    cards[i].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+                });
+                dotsContainer.appendChild(dot);
+            });
+
+            // Update dots on scroll
+            track.addEventListener('scroll', () => {
+                const scrollLeft = track.scrollLeft;
+                const cardWidth = cards[0].offsetWidth + 24;
+                const active = Math.round(scrollLeft / cardWidth);
+                dotsContainer.querySelectorAll('button').forEach((dot, i) => {
+                    dot.className = 'w-2 h-2 rounded-full transition-colors duration-200 ' + (i === active ? 'bg-charcoal' : 'bg-light-stone');
+                });
+            });
+
+            // Drag to scroll on desktop
+            let isDown = false, startX, scrollL;
+            track.addEventListener('mousedown', e => { isDown = true; startX = e.pageX - track.offsetLeft; scrollL = track.scrollLeft; });
+            track.addEventListener('mouseleave', () => isDown = false);
+            track.addEventListener('mouseup', () => isDown = false);
+            track.addEventListener('mousemove', e => { if (!isDown) return; e.preventDefault(); track.scrollLeft = scrollL - (e.pageX - track.offsetLeft - startX); });
+        })();
+    </script>
+
+    <!-- Hello from Mike -->
+    <section id="about" class="py-20 md:py-28">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex items-center gap-5 mb-10">
+                <img src="mikevalexander.jpeg" alt="Mike V Alexander" class="w-16 h-16 rounded-full object-cover shadow-elevated" style="object-position: center 20%;">
+                <div>
+                    <h2 class="font-display text-3xl md:text-4xl font-medium tracking-[-0.03em] text-charcoal">Hello from Mike</h2>
+                </div>
+            </div>
+
+            <div class="space-y-6 font-editorial text-lg text-black" style="line-height: 1.8;">
+                <p class="text-xl md:text-2xl font-display font-medium text-charcoal" style="line-height: 1.4;">
+                    "Leverage Builders was created for professionals who care about doing the work properly in an AI-driven world."
+                </p>
+
+                <p>AI is changing SEO quickly, but I believe the future of SEO is not more execution. It is senior strategists sitting on top of AI-driven delivery.</p>
+
+                <p>This community should cut through the noise, cheap hacks and shortcuts. AI SEO on LinkedIn has:</p>
+                <ul class="space-y-2 pl-1">
+                    <li class="flex items-start gap-3">
+                        <span class="text-gold mt-1.5 text-xs">&#9679;</span>
+                        <span>Too many shortcuts.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-gold mt-1.5 text-xs">&#9679;</span>
+                        <span>Too much low-quality output.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-gold mt-1.5 text-xs">&#9679;</span>
+                        <span>Too much focus on speed over substance.</span>
+                    </li>
+                </ul>
+
+                <p>This isn't about hacks, listicles, or mass-produced content. It's about using AI properly, to improve the quality of the work, sharpen thinking, and deliver better outcomes for clients.</p>
+
+                <p>Leverage Builders is a space to explore that.</p>
+                <ul class="space-y-2 pl-1">
+                    <li class="flex items-start gap-3">
+                        <span class="text-gold mt-1.5 text-xs">&#9679;</span>
+                        <span>To share ideas.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-gold mt-1.5 text-xs">&#9679;</span>
+                        <span>To test what actually works.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-gold mt-1.5 text-xs">&#9679;</span>
+                        <span>To figure out how AI fits into real SEO delivery, without losing the craft.</span>
+                    </li>
+                </ul>
+
+                <p>If you're already doing the work and thinking about it in a similar way, you'll fit right in. Looking forward to the discussion!</p>
+            </div>
+
+            <!-- About Mike stats -->
+            <div class="mt-12 pt-10 border-t border-light-stone">
+                <p class="font-body text-xs tracking-widest uppercase text-gold-dark mb-6">About Mike</p>
+                <ul class="grid sm:grid-cols-2 gap-x-12 gap-y-3">
+                    <li class="flex items-start gap-3 font-editorial text-base text-black">
+                        <span class="text-gold mt-1.5 text-xs">&#9679;</span>
+                        <span>14+ years working in SEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 font-editorial text-base text-black">
+                        <span class="text-gold mt-1.5 text-xs">&#9679;</span>
+                        <span>7+ years as a consultant</span>
+                    </li>
+                    <li class="flex items-start gap-3 font-editorial text-base text-black">
+                        <span class="text-gold mt-1.5 text-xs">&#9679;</span>
+                        <span>Built 3 separate six-figure businesses powered purely by SEO</span>
+                    </li>
+                    <li class="flex items-start gap-3 font-editorial text-base text-black">
+                        <span class="text-gold mt-1.5 text-xs">&#9679;</span>
+                        <span>Experience across agency and consulting</span>
+                    </li>
+                    <li class="flex items-start gap-3 font-editorial text-base text-black">
+                        <span class="text-gold mt-1.5 text-xs">&#9679;</span>
+                        <span>Currently building and testing AI-assisted SEO workflows in real client work</span>
+                    </li>
+                    <li class="flex items-start gap-3 font-editorial text-base text-black">
+                        <span class="text-gold mt-1.5 text-xs">&#9679;</span>
+                        <span>Exploring how personal operating systems can improve delivery without losing control of the work</span>
+                    </li>
+                </ul>
+                <div class="flex items-center gap-3 mt-8">
+                    <a href="https://mikevalexander.com/" target="_blank" rel="noopener" class="btn-primary inline-flex items-center gap-2 border border-charcoal text-charcoal px-4 py-2 text-sm font-medium tracking-wide rounded-sm hover:bg-charcoal hover:text-warm-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold">
+                        Website <span class="text-base leading-none">&rarr;</span>
+                    </a>
+                    <a href="https://x.com/mikevalexander" target="_blank" rel="noopener" class="btn-primary inline-flex items-center gap-2 border border-charcoal text-charcoal px-4 py-2 text-sm font-medium tracking-wide rounded-sm hover:bg-charcoal hover:text-warm-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold">
+                        X <span class="text-base leading-none">&rarr;</span>
+                    </a>
+                    <a href="https://www.instagram.com/mikevalexander" target="_blank" rel="noopener" class="btn-primary inline-flex items-center gap-2 border border-charcoal text-charcoal px-4 py-2 text-sm font-medium tracking-wide rounded-sm hover:bg-charcoal hover:text-warm-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold">
+                        Instagram <span class="text-base leading-none">&rarr;</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/mike-v-alexander" target="_blank" rel="noopener" class="btn-primary inline-flex items-center gap-2 border border-charcoal text-charcoal px-4 py-2 text-sm font-medium tracking-wide rounded-sm hover:bg-charcoal hover:text-warm-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold">
+                        LinkedIn <span class="text-base leading-none">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get -->
+    <section id="community" class="py-20 md:py-28">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="font-body text-sm tracking-widest uppercase text-gold-dark mb-4">The Community</p>
+                <h2 class="font-display text-3xl md:text-4xl font-medium tracking-[-0.03em] text-charcoal mb-4">What you get</h2>
+                <p class="font-editorial text-lg text-black max-w-xl mx-auto" style="line-height: 1.7;">Real workflows, real conversations, and a space built for operators, not spectators.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-8 rounded-sm shadow-elevated hover:shadow-floating transition-shadow duration-300">
+                    <div class="w-8 h-[2px] bg-gold mb-6"></div>
+                    <h3 class="font-display text-lg font-medium text-charcoal mb-3">AI Workflows</h3>
+                    <p class="font-body text-sm text-black leading-relaxed">Built for real client work. Not theory. Not generic prompts. Real ways of working you can apply immediately.</p>
+                </div>
+                <div class="bg-white p-8 rounded-sm shadow-elevated hover:shadow-floating transition-shadow duration-300">
+                    <div class="w-8 h-[2px] bg-gold mb-6"></div>
+                    <h3 class="font-display text-lg font-medium text-charcoal mb-3">Your Operating System</h3>
+                    <p class="font-body text-sm text-black leading-relaxed">Build personal systems that give you a long-term edge in how you work and deliver.</p>
+                </div>
+                <div class="bg-white p-8 rounded-sm shadow-elevated hover:shadow-floating transition-shadow duration-300">
+                    <div class="w-8 h-[2px] bg-gold mb-6"></div>
+                    <h3 class="font-display text-lg font-medium text-charcoal mb-3">Real Conversation</h3>
+                    <p class="font-body text-sm text-black leading-relaxed">Honest discussions about what is working and what is not. No ego, no noise.</p>
+                </div>
+                <div class="bg-white p-8 rounded-sm shadow-elevated hover:shadow-floating transition-shadow duration-300">
+                    <div class="w-8 h-[2px] bg-gold mb-6"></div>
+                    <h3 class="font-display text-lg font-medium text-charcoal mb-3">Video Tutorials</h3>
+                    <p class="font-body text-sm text-black leading-relaxed">Walkthroughs of systems, workflows, and real implementations you can follow along with.</p>
+                </div>
+                <div class="bg-white p-8 rounded-sm shadow-elevated hover:shadow-floating transition-shadow duration-300">
+                    <div class="w-8 h-[2px] bg-gold mb-6"></div>
+                    <h3 class="font-display text-lg font-medium text-charcoal mb-3">Better Delivery</h3>
+                    <p class="font-body text-sm text-black leading-relaxed">Systems that improve how you think, plan, and execute search marketing for your clients.</p>
+                </div>
+                <div class="bg-white p-8 rounded-sm shadow-elevated hover:shadow-floating transition-shadow duration-300">
+                    <div class="w-8 h-[2px] bg-gold mb-6"></div>
+                    <h3 class="font-display text-lg font-medium text-charcoal mb-3">Shared Thinking</h3>
+                    <p class="font-body text-sm text-black leading-relaxed">Ideas and approaches that improve how you operate, not just shared tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Not For Everyone -->
+    <section class="py-16 md:py-20 bg-charcoal relative grain">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="font-display text-2xl md:text-3xl font-medium tracking-[-0.03em] text-warm-white">This is not for everyone.</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <p class="font-body text-xs tracking-widest uppercase text-gold mb-6">Not this</p>
+                    <ul class="space-y-3">
+                        <li class="font-editorial text-warm-white/60 text-base flex items-start gap-3">
+                            <span class="text-warm-white/30 mt-0.5">—</span> No cheap tricks or shortcuts
+                        </li>
+                        <li class="font-editorial text-warm-white/60 text-base flex items-start gap-3">
+                            <span class="text-warm-white/30 mt-0.5">—</span> No AI slop or mass-generated content
+                        </li>
+                        <li class="font-editorial text-warm-white/60 text-base flex items-start gap-3">
+                            <span class="text-warm-white/30 mt-0.5">—</span> No hype, no noise, no trend-chasing
+                        </li>
+                        <li class="font-editorial text-warm-white/60 text-base flex items-start gap-3">
+                            <span class="text-warm-white/30 mt-0.5">—</span> No "make money with AI" content
+                        </li>
+                        <li class="font-editorial text-warm-white/60 text-base flex items-start gap-3">
+                            <span class="text-warm-white/30 mt-0.5">—</span> No automation for the sake of it
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="font-body text-xs tracking-widest uppercase text-gold mb-6">This</p>
+                    <ul class="space-y-3">
+                        <li class="font-editorial text-warm-white text-base flex items-start gap-3">
+                            <span class="text-gold mt-0.5">—</span> Experienced SEO consultants
+                        </li>
+                        <li class="font-editorial text-warm-white text-base flex items-start gap-3">
+                            <span class="text-gold mt-0.5">—</span> Boutique agency owners
+                        </li>
+                        <li class="font-editorial text-warm-white text-base flex items-start gap-3">
+                            <span class="text-gold mt-0.5">—</span> Strategic operators building systems
+                        </li>
+                        <li class="font-editorial text-warm-white text-base flex items-start gap-3">
+                            <span class="text-gold mt-0.5">—</span> People doing real work for real businesses
+                        </li>
+                        <li class="font-editorial text-warm-white text-base flex items-start gap-3">
+                            <span class="text-gold mt-0.5">—</span> Those who want leverage, not shortcuts
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal border-t border-white/10 py-8 pb-24 md:pb-8">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <img src="Brand%20Logo.png" alt="Leverage Builders" class="h-8 w-auto brightness-0 invert opacity-40">
+            <p class="font-body text-xs text-warm-white/40">&copy; 2026 Leverage Builders. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Sticky mobile CTA -->
+    <div id="mobile-cta" class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-charcoal border-t border-white/10 px-4 py-3 transition-transform duration-300">
+        <button onclick="document.getElementById('mobile-signup').classList.toggle('hidden')" class="btn-primary w-full bg-gold text-charcoal py-3 text-sm font-semibold tracking-wide rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-warm-white">
+            Join the Community
+        </button>
+        <form id="mobile-signup" action="https://formspree.io/f/your-form-id" method="POST" class="hidden space-y-3 mt-3">
+            <input type="text" name="name" placeholder="Your name" required
+                class="w-full px-4 py-3 bg-white/10 border border-white/15 text-warm-white placeholder-warm-white/40 font-body text-sm rounded-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors duration-200">
+            <input type="email" name="email" placeholder="Your email" required
+                class="w-full px-4 py-3 bg-white/10 border border-white/15 text-warm-white placeholder-warm-white/40 font-body text-sm rounded-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors duration-200">
+            <button type="submit"
+                class="btn-primary w-full bg-gold text-charcoal py-3 text-sm font-semibold tracking-wide rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-warm-white">
+                Sign Up
+            </button>
+        </form>
+    </div>
+
+</body>
+</html>
