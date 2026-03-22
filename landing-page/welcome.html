@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Leverage Builders</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#B0B44A',
+                        'gold-dark': '#8A8D3A',
+                        charcoal: '#1F1F1F',
+                        'warm-white': '#FAF9F7',
+                        'muted-grey': '#6B666B',
+                        'light-stone': '#E8E5DF',
+                    },
+                    fontFamily: {
+                        display: ['"Playfair Display"', 'serif'],
+                        body: ['"Inter"', 'sans-serif'],
+                        editorial: ['"Crimson Text"', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: #FAF9F7; color: #000000; }
+
+        .gold-highlight {
+            background: linear-gradient(180deg, transparent 60%, rgba(176, 180, 74, 0.25) 60%);
+            display: inline;
+        }
+
+        .btn-primary {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease;
+        }
+        .btn-primary:hover { transform: scale(1.03); }
+        .btn-primary:active { transform: scale(0.98); }
+
+        .shadow-elevated {
+            box-shadow: 0 1px 2px rgba(31, 31, 31, 0.04), 0 4px 12px rgba(31, 31, 31, 0.06);
+        }
+        .shadow-floating {
+            box-shadow: 0 2px 4px rgba(31, 31, 31, 0.04), 0 8px 24px rgba(31, 31, 31, 0.08), 0 24px 48px rgba(31, 31, 31, 0.04);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-warm-white border-b border-light-stone/60">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="Brand%20Logo.png" alt="Leverage Builders" class="h-10 w-auto">
+                <span class="font-display text-lg font-medium text-charcoal">Leverage Builders</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Welcome -->
+    <section class="py-16 md:py-24">
+        <div class="max-w-2xl mx-auto px-6">
+            <!-- Intro -->
+            <div class="text-center mb-16">
+                <h1 class="font-display text-4xl md:text-5xl font-medium leading-[1.1] tracking-[-0.03em] text-charcoal mb-6">
+                    Welcome to <span class="gold-highlight">Leverage Builders</span>
+                </h1>
+                <p class="font-display text-xl text-charcoal font-medium">You're in.</p>
+            </div>
+
+            <div class="space-y-6 font-editorial text-lg text-black" style="line-height: 1.8;">
+                <p>I'll be building my SEO operating system, <span class="gold-highlight">MikeOS</span>, in public and sharing everything along the way. The workflows, the systems, the wins, and the mistakes.</p>
+
+                <p>This isn't about doing more SEO with AI.<br>It's about doing <span class="gold-highlight">better work</span> with it.</p>
+
+                <p>Better thinking.<br>Better systems.<br>Better output.</p>
+
+                <p class="font-display text-xl text-charcoal font-medium pt-4">Here's how to get started:</p>
+            </div>
+
+            <!-- Step 1 -->
+            <div class="mt-12 bg-white p-8 rounded-sm shadow-elevated">
+                <p class="font-body text-xs tracking-widest uppercase text-gold-dark mb-3">Step 1</p>
+                <h2 class="font-display text-2xl font-medium text-charcoal mb-4">Join the discussion on Skool</h2>
+                <div class="font-editorial text-lg text-black space-y-4" style="line-height: 1.8;">
+                    <p>This is where everything happens.</p>
+                    <p>Real workflows.<br>Breakdowns.<br>Conversations with people actually doing the work.</p>
+                </div>
+                <div class="mt-6">
+                    <a href="https://www.skool.com/building-leverage-seo-2965" target="_blank" rel="noopener" class="btn-primary inline-flex items-center gap-2 bg-charcoal text-warm-white px-6 py-3 text-sm font-semibold tracking-wide rounded-sm hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold">
+                        Join the Skool Community <span class="text-lg leading-none">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="mt-6 bg-white p-8 rounded-sm shadow-elevated">
+                <p class="font-body text-xs tracking-widest uppercase text-gold-dark mb-3">Step 2</p>
+                <h2 class="font-display text-2xl font-medium text-charcoal mb-4">Introduce yourself</h2>
+                <div class="font-editorial text-lg text-black space-y-4" style="line-height: 1.8;">
+                    <p>Once you're in Skool, head to the community feed and create your first post.</p>
+                    <p>Share:</p>
+                    <ul class="space-y-2 pl-1">
+                        <li class="flex items-start gap-3">
+                            <span class="text-gold mt-1.5 text-xs">&#9679;</span>
+                            <span>What you're working on</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-gold mt-1.5 text-xs">&#9679;</span>
+                            <span>Where you're trying to improve</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-gold mt-1.5 text-xs">&#9679;</span>
+                            <span>How you're currently using AI</span>
+                        </li>
+                    </ul>
+                    <p>This helps shape better discussions and gets you plugged in quickly.</p>
+                </div>
+                <div class="mt-6">
+                    <a href="https://www.skool.com/building-leverage-seo-2965" target="_blank" rel="noopener" class="btn-primary inline-flex items-center gap-2 border border-charcoal text-charcoal px-6 py-3 text-sm font-semibold tracking-wide rounded-sm hover:bg-charcoal hover:text-warm-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold">
+                        Introduce Yourself <span class="text-lg leading-none">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="mt-6 bg-white p-8 rounded-sm shadow-elevated">
+                <p class="font-body text-xs tracking-widest uppercase text-gold-dark mb-3">Step 3</p>
+                <h2 class="font-display text-2xl font-medium text-charcoal mb-4">Join the Substack</h2>
+                <div class="font-editorial text-lg text-black space-y-4" style="line-height: 1.8;">
+                    <p>I'll be sharing deeper breakdowns, workflows, and ideas via email.</p>
+                    <p>As I build MikeOS, I'll send:</p>
+                    <ul class="space-y-2 pl-1">
+                        <li class="flex items-start gap-3">
+                            <span class="text-gold mt-1.5 text-xs">&#9679;</span>
+                            <span>Systems you can actually implement</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-gold mt-1.5 text-xs">&#9679;</span>
+                            <span>Tutorials and walkthroughs</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-gold mt-1.5 text-xs">&#9679;</span>
+                            <span>What's working (and what isn't)</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-6">
+                    <a href="https://mikevalexander.substack.com/" target="_blank" rel="noopener" class="btn-primary inline-flex items-center gap-2 border border-charcoal text-charcoal px-6 py-3 text-sm font-semibold tracking-wide rounded-sm hover:bg-charcoal hover:text-warm-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold">
+                        Subscribe on Substack <span class="text-lg leading-none">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- What's coming -->
+            <div class="mt-12 pt-10 border-t border-light-stone">
+                <p class="font-body text-xs tracking-widest uppercase text-gold-dark mb-4">What's coming next</p>
+                <div class="font-editorial text-lg text-black space-y-4" style="line-height: 1.8;">
+                    <p>You'll start seeing:</p>
+                    <ul class="space-y-2 pl-1">
+                        <li class="flex items-start gap-3">
+                            <span class="text-gold mt-1.5 text-xs">&#9679;</span>
+                            <span>New workflows</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-gold mt-1.5 text-xs">&#9679;</span>
+                            <span>Video breakdowns</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-gold mt-1.5 text-xs">&#9679;</span>
+                            <span>Practical tutorials</span>
+                        </li>
+                    </ul>
+                    <p>All pulled directly from what I'm building.</p>
+                    <p>No fluff. Just things you can use.</p>
+                </div>
+            </div>
+
+            <!-- Closing -->
+            <div class="mt-12 pt-10 border-t border-light-stone text-center">
+                <p class="font-editorial text-lg text-black" style="line-height: 1.8;">This is a space for people who care about the work.</p>
+                <p class="font-display text-xl text-charcoal font-medium mt-4">Make it count.</p>
+                <p class="font-editorial text-lg text-muted-grey mt-6">Mike</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal border-t border-white/10 py-8">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <img src="Brand%20Logo.png" alt="Leverage Builders" class="h-8 w-auto brightness-0 invert opacity-40">
+            <p class="font-body text-xs text-warm-white/40">&copy; 2026 Leverage Builders. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
