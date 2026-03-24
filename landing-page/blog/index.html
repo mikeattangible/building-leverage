@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Building Leverage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#B0B44A',
+                        'gold-dark': '#8A8D3A',
+                        charcoal: '#1F1F1F',
+                        'warm-white': '#FAF9F7',
+                        'muted-grey': '#6B666B',
+                        'light-stone': '#E8E5DF',
+                    },
+                    fontFamily: {
+                        display: ['"Playfair Display"', 'serif'],
+                        body: ['"Inter"', 'sans-serif'],
+                        editorial: ['"Crimson Text"', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: #FAF9F7; color: #000000; }
+        .gold-highlight { background: linear-gradient(180deg, transparent 60%, rgba(176, 180, 74, 0.25) 60%); display: inline; }
+        .btn-primary { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease; }
+        .btn-primary:hover { transform: scale(1.03); }
+        .card-hover { transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { border-color: #B0B44A; box-shadow: 0 2px 4px rgba(31, 31, 31, 0.04), 0 8px 24px rgba(31, 31, 31, 0.08); }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-warm-white border-b border-light-stone/60 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3">
+                <img src="../Brand%20Logo.png" alt="Building Leverage" class="h-10 w-auto">
+                <span class="md:hidden font-display text-lg font-medium text-charcoal">Building Leverage</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="../index.html" class="font-body text-sm text-muted-grey hover:text-charcoal transition-colors duration-200 tracking-wide uppercase">Home</a>
+                <a href="../index.html#values" class="font-body text-sm text-muted-grey hover:text-charcoal transition-colors duration-200 tracking-wide uppercase">Our Values</a>
+                <a href="../index.html#about" class="font-body text-sm text-muted-grey hover:text-charcoal transition-colors duration-200 tracking-wide uppercase">About</a>
+                <a href="./" class="font-body text-sm text-charcoal hover:text-charcoal transition-colors duration-200 tracking-wide uppercase font-medium">Blog</a>
+                <a href="../index.html#join" class="btn-primary inline-block bg-charcoal text-warm-white px-5 py-2.5 text-sm font-medium tracking-wide rounded-sm hover:opacity-90">Join the Community</a>
+            </nav>
+            <button onclick="document.getElementById('mobile-nav').classList.toggle('hidden')" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu">
+                <span class="w-5 h-0.5 bg-charcoal"></span>
+                <span class="w-5 h-0.5 bg-charcoal"></span>
+                <span class="w-5 h-0.5 bg-charcoal"></span>
+            </button>
+        </div>
+        <div id="mobile-nav" class="hidden md:hidden border-t border-light-stone/60 bg-warm-white px-6 py-4 space-y-3">
+            <a href="../index.html" class="block font-body text-sm text-muted-grey">Home</a>
+            <a href="./" class="block font-body text-sm text-charcoal font-medium">Blog</a>
+            <a href="../index.html#join" class="block btn-primary bg-charcoal text-warm-white px-5 py-2.5 text-sm font-medium tracking-wide rounded-sm text-center">Join the Community</a>
+        </div>
+    </header>
+
+    <!-- Blog Index -->
+    <section class="max-w-4xl mx-auto px-6 py-16">
+        <p class="font-body text-xs tracking-widest uppercase text-gold font-semibold mb-3">Blog</p>
+        <h1 class="font-display text-4xl md:text-5xl text-charcoal leading-tight mb-4">Ideas, Workflows & <span class="gold-highlight">Systems</span></h1>
+        <p class="font-editorial text-lg text-muted-grey mb-12 max-w-xl">Exploring how AI fits into real SEO delivery without losing the craft.</p>
+
+        <!-- Articles -->
+        <div class="space-y-6">
+
+            <!-- Article Card -->
+            <a href="claude-code-for-seo.html" class="card-hover block border border-light-stone bg-white p-8 md:p-10">
+                <div class="flex flex-col md:flex-row md:items-start md:gap-10">
+                    <div class="flex-1">
+                        <p class="font-body text-xs tracking-widest uppercase text-gold font-semibold mb-3">Claude Code & SEO</p>
+                        <h2 class="font-display text-2xl md:text-3xl text-charcoal mb-3">Claude Code for SEO: How to Build <span class="gold-highlight">AI-Assisted Workflows</span> That Actually Work</h2>
+                        <p class="font-editorial text-base text-muted-grey leading-relaxed mb-4">Why Claude Code is going viral in the SEO world. Not because it writes content faster, but because it lets you build joined-up, cohesive systems instead of just throwing prompts at a chatbot.</p>
+                        <div class="flex items-center gap-3">
+                            <img src="../mikevalexander.jpeg" alt="Mike Alexander" class="w-8 h-8 rounded-full object-cover">
+                            <span class="font-body text-sm text-charcoal font-medium">Mike Alexander</span>
+                            <span class="font-body text-xs text-muted-grey">March 2025 &middot; 12 min read</span>
+                        </div>
+                    </div>
+                    <div class="hidden md:block flex-shrink-0 mt-4 md:mt-0">
+                        <div class="w-48 h-32 bg-light-stone flex items-center justify-content-center overflow-hidden">
+                            <div class="w-full h-full flex items-center justify-center">
+                                <span class="font-display text-3xl text-charcoal/10">01</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- More coming -->
+        <div class="mt-16 text-center border-t border-light-stone pt-12">
+            <p class="font-editorial text-lg text-muted-grey italic">More articles coming soon.</p>
+            <p class="font-editorial text-base text-muted-grey mt-2">Join the community to get notified when new posts go live.</p>
+            <a href="../index.html#join" class="btn-primary inline-block bg-charcoal text-warm-white px-8 py-3 text-sm font-medium tracking-wide rounded-sm hover:opacity-90 mt-6">Join Building Leverage</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-light-stone py-8 text-center">
+        <p class="font-body text-xs text-muted-grey">&copy; 2025 Building Leverage. Build leverage. Not more work.</p>
+    </footer>
+
+</body>
+</html>
