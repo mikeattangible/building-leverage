@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Code for SEO: How to Build AI-Assisted SEO Workflows and Systems | Leverage Builders</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#B0B44A',
+                        'gold-dark': '#8A8D3A',
+                        charcoal: '#1F1F1F',
+                        'warm-white': '#FAF9F7',
+                        'muted-grey': '#6B666B',
+                        'light-stone': '#E8E5DF',
+                    },
+                    fontFamily: {
+                        display: ['"Playfair Display"', 'serif'],
+                        body: ['"Inter"', 'sans-serif'],
+                        editorial: ['"Crimson Text"', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: #FAF9F7; color: #000000; }
+        .gold-highlight { background: linear-gradient(180deg, transparent 60%, rgba(176, 180, 74, 0.25) 60%); display: inline; }
+        .btn-primary { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease; }
+        .btn-primary:hover { transform: scale(1.03); }
+
+        /* TOC */
+        .toc a { transition: color 0.2s; }
+        .toc a:hover { color: #B0B44A; }
+
+        /* Diagram embeds */
+        .diagram-embed { margin: 40px -40px; border-top: 1px solid #E8E5DF; border-bottom: 1px solid #E8E5DF; background: #FAF9F7; }
+        .diagram-embed iframe { width: 100%; border: none; }
+        .diagram-caption { font-size: 12px; color: #6B666B; text-align: center; padding: 10px; font-family: 'Inter', sans-serif; border-top: 1px solid #E8E5DF; }
+
+        @media (max-width: 768px) {
+            .diagram-embed { margin: 32px -24px; }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-warm-white border-b border-light-stone/60 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3">
+                <img src="../Brand%20Logo.png" alt="Leverage Builders" class="h-10 w-auto">
+                <span class="md:hidden font-display text-lg font-medium text-charcoal">Leverage Builders</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="../index.html" class="font-body text-sm text-muted-grey hover:text-charcoal transition-colors duration-200 tracking-wide uppercase">Home</a>
+                <a href="../index.html#values" class="font-body text-sm text-muted-grey hover:text-charcoal transition-colors duration-200 tracking-wide uppercase">Our Values</a>
+                <a href="../index.html#about" class="font-body text-sm text-muted-grey hover:text-charcoal transition-colors duration-200 tracking-wide uppercase">About</a>
+                <a href="./" class="font-body text-sm text-charcoal hover:text-charcoal transition-colors duration-200 tracking-wide uppercase font-medium">Blog</a>
+                <a href="../index.html#join" class="btn-primary inline-block bg-charcoal text-warm-white px-5 py-2.5 text-sm font-medium tracking-wide rounded-sm hover:opacity-90">Join the Community</a>
+            </nav>
+            <button onclick="document.getElementById('mobile-nav').classList.toggle('hidden')" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu">
+                <span class="w-5 h-0.5 bg-charcoal"></span>
+                <span class="w-5 h-0.5 bg-charcoal"></span>
+                <span class="w-5 h-0.5 bg-charcoal"></span>
+            </button>
+        </div>
+        <div id="mobile-nav" class="hidden md:hidden border-t border-light-stone/60 bg-warm-white px-6 py-4 space-y-3">
+            <a href="../index.html" class="block font-body text-sm text-muted-grey">Home</a>
+            <a href="./" class="block font-body text-sm text-charcoal font-medium">Blog</a>
+            <a href="../index.html#join" class="block btn-primary bg-charcoal text-warm-white px-5 py-2.5 text-sm font-medium tracking-wide rounded-sm text-center">Join the Community</a>
+        </div>
+    </header>
+
+    <!-- Article -->
+    <article class="max-w-3xl mx-auto px-6 md:px-10 py-16">
+
+        <!-- Meta -->
+        <div class="mb-8">
+            <p class="font-body text-xs tracking-widest uppercase text-gold font-semibold mb-3">Claude Code & SEO</p>
+            <h1 class="font-display text-4xl md:text-5xl text-charcoal leading-tight mb-6">Claude Code for SEO: How to Build <span class="gold-highlight">AI-Assisted Workflows</span> That Actually Work</h1>
+            <div class="flex items-center gap-4 border-t border-b border-light-stone py-4">
+                <img src="../mikevalexander.jpeg" alt="Mike Alexander" class="w-12 h-12 rounded-full object-cover">
+                <div>
+                    <p class="font-body text-sm font-medium text-charcoal">Mike Alexander</p>
+                    <p class="font-body text-xs text-muted-grey">March 2025 &middot; 12 min read</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="toc bg-white border border-light-stone p-6 md:p-8 mb-12">
+            <p class="font-body text-xs tracking-widest uppercase text-muted-grey font-semibold mb-4">Table of Contents</p>
+            <ol class="space-y-2 font-editorial text-base text-charcoal list-decimal list-inside">
+                <li><a href="#problem" class="hover:text-gold">Why Prompting Isn't an SEO System</a></li>
+                <li><a href="#shift" class="hover:text-gold">How Claude Code Moves SEO From Prompting to Systems</a></li>
+                <li><a href="#fragmented" class="hover:text-gold">The Problem With Fragmented SEO Tool Stacks</a></li>
+                <li><a href="#connecting" class="hover:text-gold">How to Connect Your Entire SEO Stack With MCP and APIs</a></li>
+                <li><a href="#example" class="hover:text-gold">Example: Building an AI-Assisted Content Optimisation Workflow</a></li>
+                <li><a href="#always-on" class="hover:text-gold">Building Always-On SEO Automation Systems</a></li>
+                <li><a href="#build" class="hover:text-gold">Custom SEO Tools You Can Build With Claude Code</a></li>
+                <li><a href="#misconception" class="hover:text-gold">Why AI Cannot Replace SEO Strategy and Human Judgment</a></li>
+                <li><a href="#outcome" class="hover:text-gold">Better SEO Work, Not Less Work</a></li>
+                <li><a href="#future" class="hover:text-gold">The Future of SEO: Operators on Top of AI Systems</a></li>
+            </ol>
+        </div>
+
+        <!-- Content -->
+        <div class="prose">
+
+            <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">Not because it writes content faster.</p>
+            <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">And not because it replaces strategy or can replace a &pound;10,000 a month agency.</p>
+            <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">It's because it allows you to build joined-up, cohesive systems instead of just throwing prompts at a chatbot.</p>
+            <p class="font-editorial text-lg text-charcoal leading-relaxed mb-8">A lot of people are seriously underestimating what this technology actually is.</p>
+
+            <hr class="border-light-stone my-12">
+
+            <!-- Section: Problem -->
+            <div id="problem">
+                <p class="font-body text-xs tracking-widest uppercase text-gold font-semibold mb-2">The Problem</p>
+                <h2 class="font-display text-3xl text-charcoal mb-6">Why Prompting Isn't an <span class="gold-highlight">SEO System</span></h2>
+
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">The mistake I keep seeing is people opening Claude, pasting in a page, and saying something like:</p>
+                <blockquote class="border-l-4 border-gold pl-6 my-6">
+                    <p class="font-editorial text-lg text-muted-grey italic">"Scan this content and give me EEAT recommendations."</p>
+                </blockquote>
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">That is not a system. That is just prompting.</p>
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">And if the only thing guiding the output is a single prompt and Claude's general training data, the output is going to be shallow, generic, and often outdated.</p>
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">The quality of the output depends on the quality of the inputs.</p>
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">So if your only input is a vague prompt, you should not be surprised when you get vague, low-value recommendations back.</p>
+            </div>
+
+            <hr class="border-light-stone my-12">
+
+            <!-- Section: Shift -->
+            <div id="shift">
+                <p class="font-body text-xs tracking-widest uppercase text-gold font-semibold mb-2">The Shift</p>
+                <h2 class="font-display text-3xl text-charcoal mb-6">How Claude Code Moves SEO From Prompting to <span class="gold-highlight">Systems</span></h2>
+
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">Now this is where Claude Code becomes powerful. It allows you to move beyond prompting to start building workflows based on your specialised and hard-earned inputs.</p>
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">It takes you beyond prompting and into designing an end-to-end brand visibility system.</p>
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">So Claude Code:</p>
+                <ul class="font-editorial text-lg text-charcoal leading-relaxed mb-6 space-y-2 list-disc pl-6">
+                    <li>Lives locally on your machine</li>
+                    <li>Can interact with your files</li>
+                    <li>Can connect with your tools via MCP or APIs</li>
+                    <li>Most importantly, it can connect tools, data sources, workflows, and instructions</li>
+                </ul>
+
+                <div class="diagram-embed">
+                    <iframe src="01-what-is-claude-code.html" style="height: 580px;"></iframe>
+                    <div class="diagram-caption">What is Claude Code?</div>
+                </div>
+
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">And that means you can feed Claude with three things:</p>
+                <ul class="font-editorial text-lg text-charcoal leading-relaxed mb-6 space-y-2 list-none pl-0">
+                    <li><strong>Workflows</strong> &mdash; Instructions on how to carry out a specific task (orchestration logic)</li>
+                    <li><strong>Agents</strong> &mdash; The AI reasoning components that receive context, make decisions, and take actions</li>
+                    <li><strong>Tools</strong> &mdash; Code written so that systems can interact with each other</li>
+                </ul>
+
+                <div class="diagram-embed">
+                    <iframe src="02-wat-framework.html" style="height: 580px;"></iframe>
+                    <div class="diagram-caption">The WAT Framework</div>
+                </div>
+
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">What is known as a WAT framework. Workflows are the director. Agents are the actors. Tools are the props and equipment.</p>
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">That all sounds a bit techy, you might have been scared off with the word 'code', but I'm not a developer and Claude has written 100% of the code.</p>
+            </div>
+
+            <hr class="border-light-stone my-12">
+
+            <!-- Section: Fragmented -->
+            <div id="fragmented">
+                <p class="font-body text-xs tracking-widest uppercase text-gold font-semibold mb-2">The Biggest Advantage</p>
+                <h2 class="font-display text-3xl text-charcoal mb-6">The Problem With <span class="gold-highlight">Fragmented</span> SEO Tool Stacks</h2>
+
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">If you've worked in SEO for any length of time, your setup is probably fragmented. I've been in SEO 14 years and my tool list is getting bigger:</p>
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-6">Reporting in one place. Technical somewhere else. Content optimisation somewhere else. Search Console, Analytics, keyword tracking, links, crawling tools, internal linking tools, Google Docs, Google Sheets.</p>
+
+                <div class="diagram-embed">
+                    <iframe src="03-siloed-tools.html" style="height: 700px;"></iframe>
+                    <div class="diagram-caption">The Fragmented SEO Stack</div>
+                </div>
+
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">Everything is siloed.</p>
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">And that fragmentation creates weak and slow output if you're doing this manually. Because the insight is spread across too many places.</p>
+            </div>
+
+            <hr class="border-light-stone my-12">
+
+            <!-- Section: Connecting -->
+            <div id="connecting">
+                <p class="font-body text-xs tracking-widest uppercase text-gold font-semibold mb-2">The Breakthrough</p>
+                <h2 class="font-display text-3xl text-charcoal mb-6">How to Connect Your Entire SEO Stack With <span class="gold-highlight">MCP and APIs</span></h2>
+
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">What Claude Code allows you to do with the use of MCP servers and APIs, is connect that entire stack into one working system.</p>
+
+                <div class="diagram-embed">
+                    <iframe src="04-connected-system.html" style="height: 650px;"></iframe>
+                    <div class="diagram-caption">The Connected System</div>
+                </div>
+
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">In some cases, it can even replace parts of the stack entirely.</p>
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">So instead of isolated tools, you have one environment where your data, your instructions, your brand context, your workflows, and your tools can all speak to each other.</p>
+                <p class="font-editorial text-lg text-charcoal leading-relaxed font-semibold mb-4">That is the real shift.</p>
+            </div>
+
+            <hr class="border-light-stone my-12">
+
+            <!-- Section: Example -->
+            <div id="example">
+                <p class="font-body text-xs tracking-widest uppercase text-gold font-semibold mb-2">Example</p>
+                <h2 class="font-display text-3xl text-charcoal mb-6">Example: Building an AI-Assisted <span class="gold-highlight">Content Optimisation</span> Workflow</h2>
+
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">So, going back to the example above, if you want to optimise content, you don't ask Claude to "improve this page". You build a process.</p>
+
+                <h3 class="font-display text-xl text-charcoal mt-8 mb-4">First, you give the system context:</h3>
+                <ul class="font-editorial text-lg text-charcoal leading-relaxed mb-6 space-y-1 list-disc pl-6">
+                    <li>Brand files</li>
+                    <li>Canonical statements</li>
+                    <li>Correct brand usage, dos and don'ts</li>
+                    <li>Writing style</li>
+                    <li>Expertise documents and people profiles</li>
+                    <li>White papers and reports</li>
+                    <li>Stored quotes</li>
+                    <li>Content templates and content inventory</li>
+                </ul>
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-6">Now it has memory that it'll check every time. No repeating. All functions act from this source of truth. All AI agents will work from the same instructions.</p>
+
+                <h3 class="font-display text-xl text-charcoal mt-8 mb-4">Then you build the workflow</h3>
+                <ol class="font-editorial text-lg text-charcoal leading-relaxed mb-6 space-y-1 list-decimal pl-6">
+                    <li>Load brand files</li>
+                    <li>Load content inventory</li>
+                    <li>Fetch the live page</li>
+                    <li>Extract entities</li>
+                    <li>Pull rankings</li>
+                    <li>Analyse Search Console</li>
+                    <li>Scrape search results</li>
+                    <li>Review competitors and missing topics</li>
+                    <li>Reference first-party data</li>
+                    <li>Add internal links</li>
+                    <li>Assign an author</li>
+                    <li>Reference a relevant white paper</li>
+                    <li>Output to a sheet</li>
+                    <li>Notify for review</li>
+                </ol>
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-6">That is completely different from prompting.</p>
+
+                <h3 class="font-display text-xl text-charcoal mt-8 mb-4">Then you layer in agents</h3>
+                <ul class="font-editorial text-lg text-charcoal leading-relaxed mb-6 space-y-1 list-disc pl-6">
+                    <li>A performance agent</li>
+                    <li>An EEAT scoring agent</li>
+                    <li>A fact-checking agent</li>
+                    <li>An internal linking agent</li>
+                    <li>A content governance agent</li>
+                    <li>A template agent</li>
+                    <li>An SEO agent</li>
+                </ul>
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-6">Each one doing a defined job inside a system you designed and learning from each others outputs.</p>
+
+                <h3 class="font-display text-xl text-charcoal mt-8 mb-4">Tools are automatically used during the process</h3>
+                <ul class="font-editorial text-lg text-charcoal leading-relaxed mb-4 space-y-1 list-none pl-0">
+                    <li>SEO agent &rarr; Upload to Google Sheets</li>
+                    <li>SEO agent &rarr; Scrape SERPs with DataForSEO</li>
+                    <li>Research agent &rarr; Pull data from keyword tool</li>
+                </ul>
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">Now the output is not just "here are some suggestions". It is a full chain of actions.</p>
+            </div>
+
+            <hr class="border-light-stone my-12">
+
+            <!-- Section: Always-on -->
+            <div id="always-on">
+                <p class="font-body text-xs tracking-widest uppercase text-gold font-semibold mb-2">What This Unlocks</p>
+                <h2 class="font-display text-3xl text-charcoal mb-6">Building Always-On <span class="gold-highlight">SEO Automation</span> Systems</h2>
+
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-6">Real value comes from connecting the dots end to end for a cohesive campaign driven from your source of truth. You can build things like:</p>
+
+                <h3 class="font-display text-xl text-charcoal mt-6 mb-3">Real-time content compliance</h3>
+                <p class="font-editorial text-base text-muted-grey leading-relaxed mb-6">New page detected &rarr; sitemap scanned &rarr; content scraped &rarr; against brand canonical &rarr; issues flagged &rarr; links suggested &rarr; notification sent &rarr; performance tracked</p>
+
+                <h3 class="font-display text-xl text-charcoal mt-6 mb-3">LLM narrative tracking</h3>
+                <p class="font-editorial text-base text-muted-grey leading-relaxed mb-6">Prompts tracked &rarr; responses scraped &rarr; narratives extracted &rarr; check against brand canonical &rarr; misinformation detected &rarr; sources analysed &rarr; report generated and emailed</p>
+
+                <h3 class="font-display text-xl text-charcoal mt-6 mb-3">Competitor link workflows</h3>
+                <p class="font-editorial text-base text-muted-grey leading-relaxed mb-6">Links scraped &rarr; opportunities identified &rarr; contacts found &rarr; outreach drafted &rarr; approved &rarr; sent &rarr; logged</p>
+
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">You're now architecting a living, breathing, always-on system built on your processes and MCP.</p>
+            </div>
+
+            <hr class="border-light-stone my-12">
+
+            <!-- Section: Build -->
+            <div id="build">
+                <p class="font-body text-xs tracking-widest uppercase text-gold font-semibold mb-2">The Real Advantage</p>
+                <h2 class="font-display text-3xl text-charcoal mb-6">Custom SEO Tools You Can Build With <span class="gold-highlight">Claude Code</span></h2>
+
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">You are no longer limited to tools.</p>
+
+                <div class="diagram-embed">
+                    <iframe src="07-what-you-can-build.html" style="height: 750px;"></iframe>
+                    <div class="diagram-caption">What You Can Build</div>
+                </div>
+
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">All connected inside your own operating system.</p>
+            </div>
+
+            <hr class="border-light-stone my-12">
+
+            <!-- Section: Misconception -->
+            <div id="misconception">
+                <p class="font-body text-xs tracking-widest uppercase text-gold font-semibold mb-2">The Misconception</p>
+                <h2 class="font-display text-3xl text-charcoal mb-6">Why AI Cannot Replace SEO <span class="gold-highlight">Strategy</span> and Human Judgment</h2>
+
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">This is the bit people get wrong. There is no such thing as one-click SEO.</p>
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-6">You see those Instagram ads of someone 'putting SEO on autopilot and eating crisps'. It's bullshit.</p>
+
+                <ul class="font-editorial text-lg text-charcoal leading-relaxed mb-6 space-y-2 list-none pl-0">
+                    <li>AI can follow your instructions. But it <strong>cannot decide what work matters</strong>.</li>
+                    <li>Tools can speed up delivery. They <strong>cannot replace judgment calls</strong>.</li>
+                    <li>Systems create leverage. They <strong>do not replace experience</strong> or human delivery.</li>
+                </ul>
+
+                <h3 class="font-display text-xl text-charcoal mt-8 mb-4">The Analogy: Building a Skyscraper</h3>
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">Think about a skyscraper. Technology can automate calculations, modelling, and planning. But that does not mean anyone can build one.</p>
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">You still need an experienced architect. Someone has to design the structure. Understand the constraints. Understand the political. Make the right decisions.</p>
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-6">If you found out the skyscraper was designed by someone with no experience, you are not getting in the lift.</p>
+
+                <div class="diagram-embed">
+                    <iframe src="05-iceberg.html" style="height: 800px;"></iframe>
+                    <div class="diagram-caption">The Real Picture</div>
+                </div>
+            </div>
+
+            <hr class="border-light-stone my-12">
+
+            <!-- Section: Outcome -->
+            <div id="outcome">
+                <p class="font-body text-xs tracking-widest uppercase text-gold font-semibold mb-2">The Outcome</p>
+                <h2 class="font-display text-3xl text-charcoal mb-6">Better SEO Work, Not <span class="gold-highlight">Less Work</span></h2>
+
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">Delivery becomes more systemised. Some parts become commoditised.</p>
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">But the people who stay valuable are the ones who can:</p>
+
+                <div class="diagram-embed">
+                    <iframe src="06-venn-diagram.html" style="height: 620px;"></iframe>
+                    <div class="diagram-caption">The Valuable Operator</div>
+                </div>
+
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">The ones who can connect business goals, brand, search data, and human judgment.</p>
+
+                <h3 class="font-display text-xl text-charcoal mt-8 mb-4">The bit I care about most</h3>
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">If the system handles more of the repetitive work:</p>
+                <ul class="font-editorial text-lg text-charcoal leading-relaxed mb-4 space-y-2 list-disc pl-6">
+                    <li>You spend more time with clients.</li>
+                    <li>More time understanding their business.</li>
+                    <li>More time making better decisions.</li>
+                    <li>More time strengthening relationships.</li>
+                </ul>
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">That is the real upgrade and also where the irreplaceable value is.</p>
+            </div>
+
+            <hr class="border-light-stone my-12">
+
+            <!-- Section: Future -->
+            <div id="future">
+                <p class="font-body text-xs tracking-widest uppercase text-gold font-semibold mb-2">The Future</p>
+                <h2 class="font-display text-3xl text-charcoal mb-6">The Future of SEO: Experienced Operators on Top of <span class="gold-highlight">AI Systems</span></h2>
+
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">The future is not one universal AI workflow.</p>
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">It is experienced operators sitting on top of an AI-assisted delivery system.</p>
+                <p class="font-editorial text-lg text-charcoal leading-relaxed mb-4">Living, cohesive brand visibility systems, built on their process. Their standards. Their way of thinking.</p>
+            </div>
+
+            <hr class="border-light-stone my-12">
+
+            <!-- CTA -->
+            <div class="bg-charcoal text-warm-white p-8 md:p-10">
+                <p class="font-body text-xs tracking-widest uppercase text-gold font-semibold mb-3">Join the Community</p>
+                <p class="font-editorial text-lg leading-relaxed mb-4" style="color: #FAF9F7;">That is exactly why I've set up <a href="https://building-leverage.com" class="text-gold hover:underline">building-leverage.com</a> as a community for people sharing workflows, systems, and ideas to do better SEO work with AI.</p>
+                <p class="font-editorial text-lg leading-relaxed mb-6" style="color: rgba(250,249,247,0.7);">It is free right now so if you're interested in building your own operating system then join and we can share some ideas. Share what you're building. I'll show you mine, you show me yours.</p>
+                <a href="https://building-leverage.com" class="btn-primary inline-block bg-gold text-charcoal px-8 py-3 text-sm font-semibold tracking-wide rounded-sm hover:opacity-90">Join Leverage Builders</a>
+            </div>
+
+        </div>
+
+        <!-- Author box -->
+        <div class="mt-12 pt-8 border-t border-light-stone flex items-start gap-6">
+            <img src="../mikevalexander.jpeg" alt="Mike Alexander" class="w-16 h-16 rounded-full object-cover flex-shrink-0">
+            <div>
+                <p class="font-display text-lg text-charcoal font-semibold mb-1">Mike Alexander</p>
+                <p class="font-editorial text-base text-muted-grey leading-relaxed">14+ years in SEO. Consultant and operator. Building AI-assisted SEO workflows and sharing everything along the way.</p>
+                <div class="flex gap-4 mt-3">
+                    <a href="https://mikevalexander.com" class="font-body text-xs text-muted-grey hover:text-gold tracking-wide uppercase">Website</a>
+                    <a href="https://x.com/mikevalexander" class="font-body text-xs text-muted-grey hover:text-gold tracking-wide uppercase">X</a>
+                    <a href="https://www.linkedin.com/in/mike-v-alexander" class="font-body text-xs text-muted-grey hover:text-gold tracking-wide uppercase">LinkedIn</a>
+                    <a href="https://mikevalexander.substack.com" class="font-body text-xs text-muted-grey hover:text-gold tracking-wide uppercase">Substack</a>
+                </div>
+            </div>
+        </div>
+
+    </article>
+
+    <!-- Footer -->
+    <footer class="border-t border-light-stone py-8 text-center">
+        <p class="font-body text-xs text-muted-grey">&copy; 2025 Leverage Builders. Build leverage. Not more work.</p>
+    </footer>
+
+</body>
+</html>

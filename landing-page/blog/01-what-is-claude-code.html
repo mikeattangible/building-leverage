@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is Claude Code?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #FAF9F7; font-family: 'Inter', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 40px; }
+        .container { width: 1000px; padding: 80px 60px; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 42px; color: #1F1F1F; text-align: center; margin-bottom: 12px; }
+        .gold-highlight { background: linear-gradient(180deg, transparent 60%, rgba(176, 180, 74, 0.25) 60%); }
+        .subtitle { text-align: center; font-family: 'Crimson Text', serif; font-size: 18px; color: #6B666B; margin-bottom: 48px; }
+
+        table { width: 100%; border-collapse: collapse; }
+        thead th { background: #1F1F1F; color: #FAF9F7; font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600; text-align: left; padding: 16px 24px; }
+        thead th:first-child { width: 260px; }
+        tbody td { padding: 18px 24px; border-bottom: 1px solid #E8E5DF; vertical-align: top; }
+        tbody tr:last-child td { border-bottom: none; }
+        tbody tr { background: #FFFFFF; }
+        tbody tr:nth-child(even) { background: #FAF9F7; }
+
+        .feature { display: flex; align-items: center; gap: 12px; }
+        .feature-dot { width: 10px; height: 10px; border-radius: 50%; background: #B0B44A; flex-shrink: 0; }
+        .feature-name { font-family: 'Inter', sans-serif; font-size: 15px; color: #1F1F1F; font-weight: 600; }
+        .feature-desc { font-family: 'Crimson Text', serif; font-size: 15px; color: #6B666B; line-height: 1.6; }
+
+        .table-wrapper { border: 1px solid #E8E5DF; overflow: hidden; }
+
+        .footer-note { text-align: center; margin-top: 40px; font-family: 'Crimson Text', serif; font-size: 16px; color: #6B666B; font-style: italic; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>What is <span class="gold-highlight">Claude Code</span>?</h1>
+        <div class="subtitle">An AI coding tool that lives locally and connects your entire stack.</div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Capability</th>
+                        <th>What This Means</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="feature">
+                                <div class="feature-dot"></div>
+                                <div class="feature-name">Lives Locally</div>
+                            </div>
+                        </td>
+                        <td class="feature-desc">Runs in your terminal on your machine, not in a browser or the cloud. It has direct access to your local files and folders.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="feature">
+                                <div class="feature-dot"></div>
+                                <div class="feature-name">Interacts with Files</div>
+                            </div>
+                        </td>
+                        <td class="feature-desc">Can read, write, and edit your local files. Brand documents, content inventories, templates, reports.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="feature">
+                                <div class="feature-dot"></div>
+                                <div class="feature-name">Connects Tools via MCP</div>
+                            </div>
+                        </td>
+                        <td class="feature-desc">Model Context Protocol lets Claude talk directly to external tools like Search Console, Ahrefs, Screaming Frog, and more.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="feature">
+                                <div class="feature-dot"></div>
+                                <div class="feature-name">Connects via APIs</div>
+                            </div>
+                        </td>
+                        <td class="feature-desc">Integrates with any service that has an API. DataForSEO, Google Analytics, NLP APIs, Knowledge Graph API.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="feature">
+                                <div class="feature-dot"></div>
+                                <div class="feature-name">Connects Data Sources</div>
+                            </div>
+                        </td>
+                        <td class="feature-desc">Pull in rankings, analytics, keyword data, and performance metrics from multiple sources into one environment.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="feature">
+                                <div class="feature-dot"></div>
+                                <div class="feature-name">Runs Workflows</div>
+                            </div>
+                        </td>
+                        <td class="feature-desc">Executes multi-step processes you design. Not single prompts, but full chains of actions with context at every step.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="feature">
+                                <div class="feature-dot"></div>
+                                <div class="feature-name">Writes Code for You</div>
+                            </div>
+                        </td>
+                        <td class="feature-desc">You do not need to be a developer. Claude writes 100% of the code. You design the system, it builds it.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer-note">One environment where your data, tools, instructions, and workflows all speak to each other.</div>
+    </div>
+</body>
+</html>

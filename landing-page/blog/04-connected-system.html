@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Connected System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #FAF9F7; font-family: 'Inter', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 40px; }
+        .container { width: 1200px; padding: 80px 60px; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 42px; color: #1F1F1F; text-align: center; margin-bottom: 12px; }
+        .gold-highlight { background: linear-gradient(180deg, transparent 60%, rgba(176, 180, 74, 0.25) 60%); }
+        .subtitle { text-align: center; font-family: 'Crimson Text', serif; font-size: 18px; color: #6B666B; margin-bottom: 60px; }
+
+        .diagram { position: relative; width: 100%; height: 600px; }
+
+        /* Central hub */
+        .hub { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 220px; height: 220px; border-radius: 50%; background: #1F1F1F; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 10; box-shadow: 0 0 0 20px rgba(31,31,31,0.05), 0 0 0 40px rgba(31,31,31,0.02); }
+        .hub-label { color: #FAF9F7; font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; text-align: center; }
+        .hub-sub { color: #B0B44A; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; margin-top: 8px; }
+
+        /* Category clusters */
+        .cluster { position: absolute; z-index: 5; }
+        .cluster-label { font-family: 'Playfair Display', serif; font-size: 16px; color: #1F1F1F; font-weight: 600; margin-bottom: 10px; }
+        .cluster-items { display: flex; flex-direction: column; gap: 4px; }
+        .cluster-item { font-size: 13px; color: #6B666B; display: flex; align-items: center; gap: 8px; }
+        .cluster-item::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #B0B44A; flex-shrink: 0; }
+
+        .cluster.tools { top: 20px; left: 60px; }
+        .cluster.workflows { top: 20px; right: 60px; text-align: right; }
+        .cluster.workflows .cluster-item { flex-direction: row-reverse; }
+        .cluster.knowledge { bottom: 20px; left: 60px; }
+        .cluster.data { bottom: 20px; right: 60px; text-align: right; }
+        .cluster.data .cluster-item { flex-direction: row-reverse; }
+        .cluster.branding { top: 50%; left: 20px; transform: translateY(-50%); }
+
+        /* SVG lines */
+        .lines { position: absolute; inset: 0; z-index: 1; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The <span class="gold-highlight">Connected</span> System</h1>
+        <div class="subtitle">One environment where everything speaks to each other.</div>
+
+        <div class="diagram">
+            <svg class="lines" viewBox="0 0 1080 600">
+                <!-- Lines from clusters to center -->
+                <line x1="200" y1="120" x2="430" y2="260" stroke="#B0B44A" stroke-width="1" opacity="0.2" />
+                <line x1="880" y1="120" x2="650" y2="260" stroke="#B0B44A" stroke-width="1" opacity="0.2" />
+                <line x1="200" y1="480" x2="430" y2="340" stroke="#B0B44A" stroke-width="1" opacity="0.2" />
+                <line x1="880" y1="480" x2="650" y2="340" stroke="#B0B44A" stroke-width="1" opacity="0.2" />
+                <line x1="160" y1="300" x2="430" y2="300" stroke="#B0B44A" stroke-width="1" opacity="0.2" />
+
+                <!-- Decorative network dots -->
+                <circle cx="315" cy="190" r="4" fill="#B0B44A" opacity="0.15" />
+                <circle cx="765" cy="190" r="4" fill="#B0B44A" opacity="0.15" />
+                <circle cx="315" cy="410" r="4" fill="#B0B44A" opacity="0.15" />
+                <circle cx="765" cy="410" r="4" fill="#B0B44A" opacity="0.15" />
+                <circle cx="295" cy="300" r="4" fill="#B0B44A" opacity="0.15" />
+
+                <!-- Extra ambient dots -->
+                <circle cx="100" cy="200" r="3" fill="#1F1F1F" opacity="0.04" />
+                <circle cx="980" cy="200" r="3" fill="#1F1F1F" opacity="0.04" />
+                <circle cx="100" cy="400" r="3" fill="#1F1F1F" opacity="0.04" />
+                <circle cx="980" cy="400" r="3" fill="#1F1F1F" opacity="0.04" />
+                <circle cx="540" cy="50" r="3" fill="#1F1F1F" opacity="0.04" />
+                <circle cx="540" cy="550" r="3" fill="#1F1F1F" opacity="0.04" />
+            </svg>
+
+            <div class="hub">
+                <div class="hub-label">Claude<br>Code</div>
+                <div class="hub-sub">Your Operating System</div>
+            </div>
+
+            <div class="cluster tools">
+                <div class="cluster-label">Tools</div>
+                <div class="cluster-items">
+                    <div class="cluster-item">Screaming Frog</div>
+                    <div class="cluster-item">Ahrefs</div>
+                    <div class="cluster-item">Search Console</div>
+                    <div class="cluster-item">Google Analytics</div>
+                    <div class="cluster-item">DataForSEO</div>
+                </div>
+            </div>
+
+            <div class="cluster workflows">
+                <div class="cluster-label">Workflows</div>
+                <div class="cluster-items">
+                    <div class="cluster-item">Content optimisation</div>
+                    <div class="cluster-item">Technical audits</div>
+                    <div class="cluster-item">Link building</div>
+                    <div class="cluster-item">Competitor analysis</div>
+                </div>
+            </div>
+
+            <div class="cluster knowledge">
+                <div class="cluster-label">Knowledge</div>
+                <div class="cluster-items">
+                    <div class="cluster-item">Brand files</div>
+                    <div class="cluster-item">Expertise documents</div>
+                    <div class="cluster-item">White papers</div>
+                    <div class="cluster-item">Content templates</div>
+                </div>
+            </div>
+
+            <div class="cluster data">
+                <div class="cluster-label">Data</div>
+                <div class="cluster-items">
+                    <div class="cluster-item">Rankings</div>
+                    <div class="cluster-item">Search Console data</div>
+                    <div class="cluster-item">Analytics</div>
+                    <div class="cluster-item">Content inventory</div>
+                </div>
+            </div>
+
+            <div class="cluster branding">
+                <div class="cluster-label">Branding</div>
+                <div class="cluster-items">
+                    <div class="cluster-item">Brand guidelines</div>
+                    <div class="cluster-item">Tone of voice</div>
+                    <div class="cluster-item">Canonical statements</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

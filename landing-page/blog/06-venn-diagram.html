@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Valuable Operator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #FAF9F7; font-family: 'Inter', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 40px; }
+        .container { width: 1000px; padding: 80px 60px; text-align: center; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 42px; color: #1F1F1F; margin-bottom: 12px; }
+        .gold-highlight { background: linear-gradient(180deg, transparent 60%, rgba(176, 180, 74, 0.25) 60%); }
+        .subtitle { font-family: 'Crimson Text', serif; font-size: 18px; color: #6B666B; margin-bottom: 60px; }
+
+        .venn { position: relative; width: 600px; height: 520px; margin: 0 auto; }
+
+        .circle { position: absolute; width: 320px; height: 320px; border-radius: 50%; border: 2px solid; display: flex; align-items: center; justify-content: center; }
+
+        .circle-1 { top: 0; left: 50%; transform: translateX(-50%); border-color: #B0B44A; background: rgba(176, 180, 74, 0.06); }
+        .circle-2 { bottom: 40px; left: 20px; border-color: #1F1F1F; background: rgba(31, 31, 31, 0.03); }
+        .circle-3 { bottom: 40px; right: 20px; border-color: #6B666B; background: rgba(107, 102, 107, 0.03); }
+
+        .circle-label { position: absolute; z-index: 5; }
+        .circle-label .label-title { font-family: 'Playfair Display', serif; font-size: 17px; color: #1F1F1F; font-weight: 600; line-height: 1.3; }
+        .circle-label .label-desc { font-size: 12px; color: #6B666B; margin-top: 4px; line-height: 1.4; }
+
+        .label-1 { top: 60px; left: 50%; transform: translateX(-50%); text-align: center; width: 200px; }
+        .label-2 { bottom: 110px; left: 50px; text-align: center; width: 160px; }
+        .label-3 { bottom: 110px; right: 50px; text-align: center; width: 160px; }
+
+        /* Center intersection */
+        .center-label { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -10%); z-index: 10; background: #1F1F1F; color: #FAF9F7; padding: 14px 28px; font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; letter-spacing: 0.02em; }
+
+        .footer-note { margin-top: 48px; font-family: 'Crimson Text', serif; font-size: 17px; color: #6B666B; font-style: italic; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The <span class="gold-highlight">Valuable</span> Operator</h1>
+        <div class="subtitle">The people who stay valuable can do all three.</div>
+
+        <div class="venn">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="circle circle-3"></div>
+
+            <div class="circle-label label-1">
+                <div class="label-title">Architect a Unique Delivery System</div>
+                <div class="label-desc">Build AI-assisted workflows and operating systems</div>
+            </div>
+
+            <div class="circle-label label-2">
+                <div class="label-title">Manage Clients & Sell Ideas</div>
+                <div class="label-desc">Relationships, buy-in, communication</div>
+            </div>
+
+            <div class="circle-label label-3">
+                <div class="label-title">Be Likeable</div>
+                <div class="label-desc">People still want to work with people</div>
+            </div>
+
+            <div class="center-label">Irreplaceable</div>
+        </div>
+
+        <div class="footer-note">Connect business goals, brand, search data, and human judgment.</div>
+    </div>
+</body>
+</html>

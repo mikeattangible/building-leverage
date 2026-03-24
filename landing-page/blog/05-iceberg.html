@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Real Picture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #FAF9F7; font-family: 'Inter', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 40px; }
+        .container { width: 1000px; padding: 60px; text-align: center; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 42px; color: #1F1F1F; margin-bottom: 12px; }
+        .gold-highlight { background: linear-gradient(180deg, transparent 60%, rgba(176, 180, 74, 0.25) 60%); }
+        .subtitle { font-family: 'Crimson Text', serif; font-size: 18px; color: #6B666B; margin-bottom: 48px; }
+
+        .iceberg-scene { position: relative; width: 800px; height: 700px; margin: 0 auto; overflow: hidden; }
+
+        /* Sky */
+        .sky { position: absolute; top: 0; left: 0; right: 0; height: 250px; background: linear-gradient(180deg, #FAF9F7 0%, #E8E5DF 100%); }
+
+        /* Water surface */
+        .waterline { position: absolute; top: 250px; left: 0; right: 0; height: 4px; background: rgba(176, 180, 74, 0.4); z-index: 5; }
+        .waterline-label { position: absolute; top: 240px; right: 40px; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #6B666B; z-index: 6; }
+
+        /* Water */
+        .water { position: absolute; top: 254px; left: 0; right: 0; bottom: 0; background: linear-gradient(180deg, #1F1F1F 0%, #0a0a0a 100%); }
+
+        /* Iceberg shape - above water (small tip) */
+        .iceberg-top {
+            position: absolute;
+            top: 140px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 80px solid transparent;
+            border-right: 80px solid transparent;
+            border-bottom: 114px solid #E8E5DF;
+            z-index: 4;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.05));
+        }
+
+        /* Iceberg shape - below water (massive) */
+        .iceberg-bottom {
+            position: absolute;
+            top: 254px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+        }
+        .iceberg-bottom svg { filter: drop-shadow(0 4px 20px rgba(0,0,0,0.3)); }
+
+        /* Labels above water */
+        .above-labels { position: absolute; top: 170px; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; gap: 40px; }
+        .above-label { background: rgba(176, 180, 74, 0.9); color: #1F1F1F; padding: 8px 16px; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; white-space: nowrap; }
+
+        /* Labels below water */
+        .below-labels { position: absolute; top: 300px; left: 0; right: 0; z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 0 40px; }
+        .below-item { font-size: 13px; color: rgba(250,249,247,0.6); display: flex; align-items: center; gap: 10px; }
+        .below-item::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: rgba(250,249,247,0.15); flex-shrink: 0; }
+
+        .below-grid { position: absolute; top: 310px; left: 0; right: 0; z-index: 10; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 60px; padding: 0 80px; }
+        .below-grid .below-item { font-size: 12px; }
+
+        .below-heading { position: absolute; top: 275px; left: 50%; transform: translateX(-50%); z-index: 10; font-family: 'Playfair Display', serif; font-size: 16px; color: #B0B44A; font-weight: 600; letter-spacing: 0.05em; }
+
+        .footer-note { margin-top: 24px; font-family: 'Crimson Text', serif; font-size: 17px; color: #6B666B; font-style: italic; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The <span class="gold-highlight">Real</span> Picture</h1>
+        <div class="subtitle">What people see vs what actually makes it work.</div>
+
+        <div class="iceberg-scene">
+            <!-- Sky -->
+            <div class="sky"></div>
+
+            <!-- Waterline -->
+            <div class="waterline"></div>
+            <div class="waterline-label">Surface</div>
+
+            <!-- Iceberg top (small triangle above water) -->
+            <div class="iceberg-top"></div>
+
+            <!-- Labels above water -->
+            <div class="above-labels">
+                <div class="above-label">AI Assisted Delivery</div>
+                <div class="above-label">Results</div>
+            </div>
+
+            <!-- Water -->
+            <div class="water"></div>
+
+            <!-- Iceberg bottom (large mass below water) -->
+            <div class="iceberg-bottom">
+                <svg width="600" height="420" viewBox="0 0 600 420">
+                    <path d="M220,0 L380,0 L460,60 L520,140 L540,220 L520,300 L460,370 L380,410 L220,410 L140,370 L80,300 L60,220 L80,140 L140,60 Z" fill="rgba(232,229,223,0.12)" stroke="rgba(232,229,223,0.08)" stroke-width="1"/>
+                </svg>
+            </div>
+
+            <!-- Below water heading -->
+            <div class="below-heading">Human Judgment (Irreplaceable)</div>
+
+            <!-- Below water labels -->
+            <div class="below-grid">
+                <div class="below-item">Deciding when AI output is wrong</div>
+                <div class="below-item">Choosing which pages to prioritise</div>
+                <div class="below-item">Balancing SEO vs UX vs conversion</div>
+                <div class="below-item">Making judgment calls on risk vs reward</div>
+                <div class="below-item">Advising on templates and site structure</div>
+                <div class="below-item">Coordinating between departments</div>
+                <div class="below-item">Working around CMS or dev constraints</div>
+                <div class="below-item">Understanding politics and positioning</div>
+                <div class="below-item">Understanding budgets and personnel</div>
+                <div class="below-item">Handling internal resistance to change</div>
+                <div class="below-item">Selling ideas and getting buy-in</div>
+                <div class="below-item">Translating technical issues to business impact</div>
+                <div class="below-item">Explaining SEO to non-technical stakeholders</div>
+                <div class="below-item">Advocating for SEO in roadmap discussions</div>
+                <div class="below-item">Understanding commercial goals</div>
+                <div class="below-item">Understanding legal and compliance</div>
+            </div>
+        </div>
+
+        <div class="footer-note">You cannot automate experience, judgment, or relationships.</div>
+    </div>
+</body>
+</html>

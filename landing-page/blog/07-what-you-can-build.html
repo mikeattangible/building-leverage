@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What You Can Build</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #FAF9F7; font-family: 'Inter', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 40px; }
+        .container { width: 1200px; padding: 80px 60px; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 42px; color: #1F1F1F; text-align: center; margin-bottom: 12px; }
+        .gold-highlight { background: linear-gradient(180deg, transparent 60%, rgba(176, 180, 74, 0.25) 60%); }
+        .subtitle { text-align: center; font-family: 'Crimson Text', serif; font-size: 18px; color: #6B666B; margin-bottom: 60px; }
+
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+        .card { background: #FFFFFF; border: 1px solid #E8E5DF; padding: 28px 32px; display: flex; align-items: flex-start; gap: 20px; transition: all 0.2s ease; }
+        .card:hover { border-color: #B0B44A; }
+
+        .card-number { font-family: 'Playfair Display', serif; font-size: 24px; color: #B0B44A; font-weight: 600; line-height: 1; flex-shrink: 0; width: 36px; }
+        .card-content {}
+        .card-title { font-family: 'Playfair Display', serif; font-size: 18px; color: #1F1F1F; font-weight: 600; margin-bottom: 4px; }
+        .card-desc { font-size: 13px; color: #6B666B; line-height: 1.5; }
+
+        .built-section { margin-top: 48px; padding-top: 40px; border-top: 1px solid #E8E5DF; }
+        .built-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #B0B44A; font-weight: 600; margin-bottom: 20px; text-align: center; }
+        .built-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .built-item { background: #1F1F1F; padding: 20px 24px; display: flex; align-items: center; gap: 12px; }
+        .built-dot { width: 8px; height: 8px; border-radius: 50%; background: #B0B44A; flex-shrink: 0; }
+        .built-name { font-size: 14px; color: #FAF9F7; font-weight: 500; }
+
+        .footer-note { text-align: center; margin-top: 40px; font-family: 'Crimson Text', serif; font-size: 16px; color: #6B666B; font-style: italic; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>What You Can <span class="gold-highlight">Build</span></h1>
+        <div class="subtitle">You are no longer limited to tools. All connected inside your own operating system.</div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-number">01</div>
+                <div class="card-content">
+                    <div class="card-title">SEO Project Management System</div>
+                    <div class="card-desc">Centralised task tracking, priorities, and delivery management</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-number">02</div>
+                <div class="card-content">
+                    <div class="card-title">Proposal Generator</div>
+                    <div class="card-desc">Auto-generate client proposals from audit data and brand context</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-number">03</div>
+                <div class="card-content">
+                    <div class="card-title">AI Visibility Tracker</div>
+                    <div class="card-desc">Monitor how your brand appears across LLMs and AI search</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-number">04</div>
+                <div class="card-content">
+                    <div class="card-title">Custom Reporting Layer</div>
+                    <div class="card-desc">Unified dashboards pulling from all your data sources</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-number">05</div>
+                <div class="card-content">
+                    <div class="card-title">Entity Salience Tool</div>
+                    <div class="card-desc">Analyse entity relevance and topical authority signals</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-number">06</div>
+                <div class="card-content">
+                    <div class="card-title">Knowledge Graph Monitor</div>
+                    <div class="card-desc">Track your brand's presence in Google's Knowledge Graph</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-number">07</div>
+                <div class="card-content">
+                    <div class="card-title">Internal Linking Engine</div>
+                    <div class="card-desc">Automated internal link suggestions based on entity relationships</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="built-section">
+            <div class="built-label">Tools I've Already Built</div>
+            <div class="built-grid">
+                <div class="built-item">
+                    <div class="built-dot"></div>
+                    <div class="built-name">Content Updater</div>
+                </div>
+                <div class="built-item">
+                    <div class="built-dot"></div>
+                    <div class="built-name">LLM Tracking with Data Feedback</div>
+                </div>
+                <div class="built-item">
+                    <div class="built-dot"></div>
+                    <div class="built-name">Dynamic Content Inventory with Entity Extraction</div>
+                </div>
+                <div class="built-item">
+                    <div class="built-dot"></div>
+                    <div class="built-name">Knowledge Graph Monitor (Google's Free API)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-note">All connected inside your own operating system.</div>
+    </div>
+</body>
+</html>

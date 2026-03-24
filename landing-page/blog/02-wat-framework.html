@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The WAT Framework</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #FAF9F7; font-family: 'Inter', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 40px; }
+        .container { width: 1200px; padding: 80px 60px; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 42px; color: #1F1F1F; text-align: center; margin-bottom: 16px; }
+        .gold-highlight { background: linear-gradient(180deg, transparent 60%, rgba(176, 180, 74, 0.25) 60%); }
+        .subtitle { text-align: center; font-family: 'Crimson Text', serif; font-size: 18px; color: #6B666B; margin-bottom: 60px; }
+
+        .columns { display: flex; gap: 40px; align-items: stretch; }
+
+        .column { flex: 1; background: #FFFFFF; border: 1px solid #E8E5DF; padding: 48px 36px; position: relative; }
+        .column:nth-child(2) { background: #1F1F1F; border-color: #1F1F1F; }
+        .column:nth-child(2) .col-role, .column:nth-child(2) .col-title, .column:nth-child(2) .col-desc, .column:nth-child(2) .col-detail { color: #FAF9F7; }
+        .column:nth-child(2) .col-role { color: rgba(250,249,247,0.5); }
+        .column:nth-child(2) .col-desc { color: rgba(250,249,247,0.7); }
+        .column:nth-child(2) .col-detail { color: rgba(250,249,247,0.6); border-color: rgba(250,249,247,0.1); }
+
+        .col-icon { width: 48px; height: 48px; border-radius: 50%; background: #B0B44A; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+        .col-icon svg { width: 24px; height: 24px; }
+
+        .col-role { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #6B666B; margin-bottom: 8px; font-weight: 500; }
+        .col-title { font-family: 'Playfair Display', serif; font-size: 28px; color: #1F1F1F; margin-bottom: 16px; font-weight: 600; }
+        .col-desc { font-family: 'Crimson Text', serif; font-size: 17px; color: #6B666B; line-height: 1.6; margin-bottom: 28px; }
+        .col-detail { font-size: 13px; color: #6B666B; padding-top: 20px; border-top: 1px solid #E8E5DF; line-height: 1.7; }
+
+        /* Arrows between columns */
+        .arrow-connector { display: flex; align-items: center; justify-content: center; width: 40px; flex-shrink: 0; margin: 0 -20px; z-index: 2; }
+        .arrow-connector svg { width: 24px; height: 24px; }
+
+        .analogy { display: flex; gap: 0; margin-top: 48px; text-align: center; }
+        .analogy-item { flex: 1; padding: 20px; }
+        .analogy-icon { font-size: 14px; color: #B0B44A; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
+        .analogy-text { font-family: 'Playfair Display', serif; font-size: 18px; color: #1F1F1F; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The <span class="gold-highlight">WAT</span> Framework</h1>
+        <div class="subtitle">Workflows. Agents. Tools.</div>
+
+        <div class="columns">
+            <div class="column">
+                <div class="col-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1F1F1F" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                </div>
+                <div class="col-role">The Director</div>
+                <div class="col-title">Workflows</div>
+                <div class="col-desc">Instructions on how to carry out a specific task. The orchestration logic that defines each step.</div>
+                <div class="col-detail">Load brand files. Fetch the live page. Extract entities. Pull rankings. Analyse Search Console. Output to a sheet. Notify for review.</div>
+            </div>
+
+            <div class="column">
+                <div class="col-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#B0B44A" stroke-width="2"><path d="M12 2a5 5 0 015 5v1a5 5 0 01-10 0V7a5 5 0 015-5zM20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/></svg>
+                </div>
+                <div class="col-role">The Actors</div>
+                <div class="col-title">Agents</div>
+                <div class="col-desc">AI reasoning components that receive context, make decisions, and take actions within the system.</div>
+                <div class="col-detail">Performance agent. EEAT scoring agent. Fact-checking agent. Internal linking agent. Content governance agent.</div>
+            </div>
+
+            <div class="column">
+                <div class="col-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#1F1F1F" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                </div>
+                <div class="col-role">The Props & Equipment</div>
+                <div class="col-title">Tools</div>
+                <div class="col-desc">Code written so that systems can interact with each other. MCP servers and API connections.</div>
+                <div class="col-detail">Upload to Google Sheets. Scrape SERPs with DataForSEO. Pull data from keyword tools. Connect Search Console.</div>
+            </div>
+        </div>
+
+        <div class="analogy">
+            <div class="analogy-item">
+                <div class="analogy-icon">W</div>
+                <div class="analogy-text">The Director</div>
+            </div>
+            <div class="analogy-item">
+                <div class="analogy-icon">A</div>
+                <div class="analogy-text">The Actors</div>
+            </div>
+            <div class="analogy-item">
+                <div class="analogy-icon">T</div>
+                <div class="analogy-text">The Props</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
